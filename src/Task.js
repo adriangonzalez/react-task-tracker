@@ -1,9 +1,9 @@
 import { FaTimes } from 'react-icons/fa';
 
-const Task = ({ task, onDelete }) => {
+const Task = ({ task, onDelete, onToggleReminder }) => {
     return (
-        <div className='task'>
-            <h3>
+        <div className={`task ${task.reminder ? 'reminder' : ''}`}>
+            <h3 onDoubleClick={() => onToggleReminder(task.id)}>
                 {task.text}{' '}
                 <FaTimes
                     style={{ color: 'red', cursor: 'pointer' }}
