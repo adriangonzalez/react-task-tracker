@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import {
     useParams,
-    Navigate,
     useNavigate,
     useLocation,
 } from 'react-router-dom';
@@ -19,7 +18,6 @@ const TaskDetails = () => {
 
     useEffect(() => {
         const fetchTask = async () => {
-            console.log(`Fetch Task ${params.id}`);
             const res = await fetch(`${apiUrl}/tasks/${params.id}`);
             const data = await res.json();
 
