@@ -30,7 +30,7 @@ const TaskDetails = () => {
         };
 
         fetchTask();
-    }, []);
+    },[navigate,params]);
 
     // if (error) {
     //     return <Navigate to="/" />;
