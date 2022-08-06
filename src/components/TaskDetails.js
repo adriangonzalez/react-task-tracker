@@ -12,6 +12,7 @@ const TaskDetails = () => {
     const [task, setTask] = useState({});
     const [error, setError] = useState(null);
     const { pathname } = useLocation();
+    const apiUrl = 'https://my-json-server.typicode.com/adriangonzalez/ApiData';
 
     const params = useParams();
     const navigate = useNavigate();
@@ -19,7 +20,7 @@ const TaskDetails = () => {
     useEffect(() => {
         const fetchTask = async () => {
             console.log(`Fetch Task ${params.id}`);
-            const res = await fetch(`http://localhost:5000/tasks/${params.id}`);
+            const res = await fetch(`${apiUrl}/tasks/${params.id}`);
             const data = await res.json();
 
             if (res.status === 404) {
@@ -31,7 +32,7 @@ const TaskDetails = () => {
         };
 
         fetchTask();
-    },[]);
+    }, []);
 
     if (error) {
         return <Navigate to="/" />;
