@@ -10,7 +10,7 @@ import { Button } from './Button';
 const TaskDetails = () => {
     const [loading, setLoading] = useState(true);
     const [task, setTask] = useState({});
-    const [error, setError] = useState(null);
+    // const [error, setError] = useState(null);
     const { pathname } = useLocation();
     const apiUrl = 'https://my-json-server.typicode.com/adriangonzalez/ApiData';
 
@@ -34,9 +34,9 @@ const TaskDetails = () => {
         fetchTask();
     }, []);
 
-    if (error) {
-        return <Navigate to="/" />;
-    }
+    // if (error) {
+    //     return <Navigate to="/" />;
+    // }
     return loading ? (
         <h3>Loading...</h3>
     ) : (
