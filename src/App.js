@@ -99,7 +99,7 @@ const App = () => {
         />
         <Routes>
           <Route
-            path='/react-task-tracker'
+            path='/'
             element={
               <>
                 {showAddTask && <AddTask onAdd={addTask} />}
@@ -115,7 +115,7 @@ const App = () => {
               </>
             }
           />
-          <Route path='/react-task-tracker/about' element={<About />} />
+          <Route path='/about' element={<About />} />
           <Route path='/task/:id' element={<TaskDetails />} />
         </Routes>
         <Footer />
